@@ -1,5 +1,5 @@
 
-   @extends('layout.base')
+   @extends('layouts.base')
    @section('title', 'متجر العقار')
    @section('content')
 
@@ -56,11 +56,11 @@
           </div>
         </section>
        CATEGORIES SECTION-->
-        <section class="pt-5">
+       <!--    <section class="pt-5">
           <header class="text-center">
             <h2 class="h5 text-uppercase mb-4">تصفح العقار</h2>
           </header>
-          <div class="row">
+       <div class="row">
             <div class="col-md-4"><a class="category-item" href="shop.html"><img class="img-fluid" src="img/cat-img-1.jpg" alt=""/><strong class="category-item-title">Clothes</strong></a>
             </div>
             <div class="col-md-4"><a class="category-item mb-4" href="shop.html"><img class="img-fluid" src="img/cat-img-2.jpg" alt=""/><strong class="category-item-title">Shoes</strong></a><a class="category-item" href="shop.html"><img class="img-fluid" src="img/cat-img-3.jpg" alt=""/><strong class="category-item-title">Watches</strong></a>
@@ -69,14 +69,16 @@
             </div>
           </div>
         </section>
-        <!-- TRENDING PRODUCTS-->
+  TRENDING PRODUCTS-->
         <section class="py-5">
-          <header>
+       <!--   <header>
             <p class="small text-muted small text-uppercase mb-1">Made the hard way</p>
             <h2 class="h5 text-uppercase mb-4">Top trending products</h2>
-          </header>
+          </header> -->
           <div class="row">
             <!-- PRODUCT-->
+            @if (!@empty($data))
+            @foreach ($data as $i)
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -93,7 +95,13 @@
                 <p class="small text-muted">$250</p>
               </div>
             </div>
-            <!-- PRODUCT-->
+            @endforeach
+            @else
+              <div>لا يوجد عقار للعرض</div>
+            @endif
+           
+           
+            <!-- PRODUCT
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -110,7 +118,7 @@
                 <p class="small text-muted">$300</p>
               </div>
             </div>
-            <!-- PRODUCT-->
+           
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -127,7 +135,7 @@
                 <p class="small text-muted">$25</p>
               </div>
             </div>
-            <!-- PRODUCT-->
+            
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -144,7 +152,7 @@
                 <p class="small text-muted">$351</p>
               </div>
             </div>
-            <!-- PRODUCT-->
+            
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -161,7 +169,7 @@
                 <p class="small text-muted">$250</p>
               </div>
             </div>
-            <!-- PRODUCT-->
+            
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -178,7 +186,7 @@
                 <p class="small text-muted">$300</p>
               </div>
             </div>
-            <!-- PRODUCT-->
+          
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -195,7 +203,7 @@
                 <p class="small text-muted">$25</p>
               </div>
             </div>
-            <!-- PRODUCT-->
+           
             <div class="col-xl-3 col-lg-4 col-sm-6">
               <div class="product text-center">
                 <div class="position-relative mb-3">
@@ -211,7 +219,7 @@
                 <h6> <a class="reset-anchor" href="detail.html">Apple Watch</a></h6>
                 <p class="small text-muted">$351</p>
               </div>
-            </div>
+            </div> -->
           </div>
         </section>
       </div>
