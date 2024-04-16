@@ -65,8 +65,8 @@
                   </ul>
                 </div>
               </div>
-              <h6> <a class="reset-anchor" href="detail.html">Kui Ye Chen’s AirPods</a></h6>
-              <p class="small text-muted">$250</p>
+              <h6> <a class="reset-anchor" href="">{{ $i->address }}</a></h6>
+              <p class="small text-muted">{{ $i->amunt }} £</p>
             </div>
           </div>
           @endforeach
