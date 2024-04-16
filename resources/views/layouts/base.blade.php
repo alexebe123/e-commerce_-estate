@@ -32,7 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                  <!-- Link--><a class="nav-link active" href="index.html">صفحة الرئيسية</a>
+                  <!-- Link--><a class="nav-link active" href="{{ route("index") }}">صفحة الرئيسية</a>
                 </li>
               <!-- <ul class="navbar-nav ms-auto">               
                 <li class="nav-item"><a class="nav-link" href="#!"> <i class="fas fa-user me-1 text-gray fw-normal"></i>تسجيل دخول</a></li>
@@ -53,6 +53,9 @@
                         </li>
                     @endif
                 @else
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('controllpanel') }}">{{ __('لوحة التحكم') }}</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -62,7 +65,7 @@
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                              document.getElementById('logout-form').submit();">
-                                {{ __('Logout') }}
+                                {{ __('تسجيل الخروج') }}
                             </a>
 
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

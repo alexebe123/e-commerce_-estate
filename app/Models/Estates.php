@@ -9,7 +9,7 @@ class Estates extends Model
 {
     use HasFactory;
     protected $table = "estates";
-    protected $fillabel=
+    protected $fillable =
     [
         "id",
         "id_owner",
@@ -17,7 +17,9 @@ class Estates extends Model
         "length",
         "width",
         "image",
-        "storey"
+        "storey",
+        "amunt",
+        "address",
     ];
 
 }
