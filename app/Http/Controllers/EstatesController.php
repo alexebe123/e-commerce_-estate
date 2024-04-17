@@ -18,6 +18,9 @@ class EstatesController extends Controller
         return view('create_estate');
     }
     public function store(Request $request) {
+        $fileName = time().$request->file('image')->getClientOriginalName();
+        $path = $request->file('image')->storeAs('images', $fileName, 'public');
+        $requestData["image"] = '/storage/'.$path;
      $data =  Estates::create([
         'width' => $request->input('width'),
         'id_owner' => Auth::id(),
@@ -26,7 +29,7 @@ class EstatesController extends Controller
         'city' => $request->input('city'),
         'amunt' => $request->input('amunt'),
         'address' => $request->input('address'),
-        'image' =>   $request->input('image'),
+        'image' =>   $requestData["image"],
         ]);
         $data->save();
       return redirect()->route("controllpanel")

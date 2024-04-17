@@ -56,7 +56,7 @@
           <div class="col-xl-3 col-lg-4 col-sm-6">
             <div class="product text-center">
               <div class="position-relative mb-3">
-                <div class="badge text-white bg-"></div><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="img/product-1.jpg" alt="..."></a>
+                <div class="badge text-white bg-"></div><a class="d-block" href="detail.html"><img class="img-fluid w-100" src="{{ $i->image }}" alt="..."></a>
                 <div class="product-overlay">
                   <ul class="mb-0 list-inline">
                     <li class="list-inline-item m-0 p-0"><a class="btn btn-sm btn-outline-dark" href="#!"><i class="far fa-heart"></i></a></li>
@@ -73,5 +73,7 @@
           @else
             <div>لا يوجد عقار للعرض</div>
           @endif
-
+        </div>
+      </section>
+   </div>
 @endsection

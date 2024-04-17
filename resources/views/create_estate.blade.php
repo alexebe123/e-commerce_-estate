@@ -9,7 +9,7 @@
               <div class="card">
                 <div class="card-body">
                   <h4 class="card-title">إضافة عقار جديد</h4>
-                  <form action="{{ route("store") }}" method="POST" class="forms-sample">
+                  <form action="{{ route("store") }}" method="POST" class="forms-sample" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
                       <label for="width">عرض</label>
