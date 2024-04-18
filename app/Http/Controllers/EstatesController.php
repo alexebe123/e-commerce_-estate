@@ -30,7 +30,7 @@ class EstatesController extends Controller
         'amunt' => $request->input('amunt'),
         'address' => $request->input('address'),
         'image' =>   $requestData["image"],
-        ]);
+     ]);
         $data->save();
       return redirect()->route("controllpanel")
         ->with('success', 'Estates created .');

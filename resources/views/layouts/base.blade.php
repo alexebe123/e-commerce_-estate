@@ -73,6 +73,7 @@
                             </form>
                         </div>
                     </li>
+                    <img src="{{ Auth::user()->image }}" width="50" height="50" >
                 @endguest
             </ul>
             </div>

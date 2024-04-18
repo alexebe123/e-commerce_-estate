@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Client\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -52,7 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'familyname' => ['required', 'string', 'max:255'],
             'address' => ['required', 'string', 'max:255'],
-            'image' => ['required', 'string', 'max:255'],
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
@@ -66,11 +67,14 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $imageName = time().'.'.$data['image']->extension();
+        //$data['image']->move(public_path('images'), $imageName);
+      $name =  $data['image']->storeAs('storage/images', $imageName); 
         return User::create([
             'name' => $data['name'],
             'familyname' => $data['familyname'],
             'address' => $data['address'],
-            'image' => $data['image'],
+            'image' => $name,
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
