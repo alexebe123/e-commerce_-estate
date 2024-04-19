@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Estates;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -14,9 +15,11 @@ class EstatesController extends Controller
         $data =  DB::select("select * from estates ");
         return view("index",['data' => $data]);
     }
+
     function create(){
         return view('create_estate');
     }
+
     public function store(Request $request) {
         $fileName = time().$request->file('image')->getClientOriginalName();
         $path = $request->file('image')->storeAs('images', $fileName, 'public');
@@ -37,9 +40,11 @@ class EstatesController extends Controller
     }
 
     public function controllpanel(){
-        $id = Auth::id();
+       /* $id = Auth::id();
         $data = DB::select("select * from estates where id_owner = ? ",[$id]);
        // dd($data);
-        return view('controllpanel',['data' => $data]);
+        return view('controllpanel',['data' => $data]);*/
+        $data = User::find(Auth::id());
+        return view('controllpanel',['data' => $data->estates]);
     }
 }

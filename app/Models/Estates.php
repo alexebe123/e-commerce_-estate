@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\User;
 
 class Estates extends Model
 {
@@ -22,4 +23,7 @@ class Estates extends Model
         "address",
     ];
 
+    public function user(){
+        return $this->belongsTo(related:User::class,foreignKey:"id_owner");
+    }
 }
