@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('estates', function (Blueprint $table) {
             $table->id();
-            $table->string('id_owner');
+            $table->integer('user_id');
             $table->string('city');
             $table->double('length');
             $table->double('width');

@@ -13,7 +13,7 @@ class Estates extends Model
     protected $fillable =
     [
         "id",
-        "id_owner",
+        "user_id",
         "city",
         "length",
         "width",
@@ -23,7 +23,7 @@ class Estates extends Model
         "address",
     ];
 
-    public function user(){
-        return $this->belongsTo(related:User::class,foreignKey:"id_owner");
+    public function user(){    
+        return $this->belongsTo(User::class);
     }
 }

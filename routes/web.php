@@ -22,6 +22,7 @@ Route::POST('/create_estate',[EstatesController::class,"store"])->name('store');
 Auth::routes();
 
 Route::get('/index', [App\Http\Controllers\EstatesController::class, 'index'])->name('home');
+Route::get('/detail/{id}', [App\Http\Controllers\EstatesController::class, 'one_prodect'])->name('detail');
 Route::get('/controllpanel',[EstatesController::class,'controllpanel'])
 ->name('controllpanel')
-->middleware(['auth', 'password.confirm']);
+->middleware(['auth']);

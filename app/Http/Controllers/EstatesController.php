@@ -26,7 +26,7 @@ class EstatesController extends Controller
         $requestData["image"] = '/storage/'.$path;
      $data =  Estates::create([
         'width' => $request->input('width'),
-        'id_owner' => Auth::id(),
+        'user_id' => Auth::id(),
         'length' => $request->input('length'),
         'storey' => $request->input('storey'),
         'city' => $request->input('city'),
@@ -46,5 +46,10 @@ class EstatesController extends Controller
         return view('controllpanel',['data' => $data]);*/
         $data = User::find(Auth::id());
         return view('controllpanel',['data' => $data->estates]);
+    }
+    public function one_prodect($id){
+        $data = Estates::find($id);
+     //   dd($data);
+        return view("detail",compact("data"));
     }
 }

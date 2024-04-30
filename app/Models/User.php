@@ -47,6 +47,6 @@ class User extends Authenticatable
     ];
 
     public function estates(){
-        return $this->hasMany(related:Estates::class,foreignKey:"id_owner");
+        return $this->hasMany(related:Estates::class,foreignKey:"user_id");
     }
 }
