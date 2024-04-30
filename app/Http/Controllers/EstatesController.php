@@ -24,7 +24,7 @@ class EstatesController extends Controller
         $fileName = time().$request->file('image')->getClientOriginalName();
         $path = $request->file('image')->storeAs('images', $fileName, 'public');
         $requestData["image"] = '/storage/'.$path;
-     $data =  Estates::create([
+        $data =  Estates::create([
         'width' => $request->input('width'),
         'user_id' => Auth::id(),
         'length' => $request->input('length'),
@@ -50,6 +50,6 @@ class EstatesController extends Controller
     public function one_prodect($id){
         $data = Estates::find($id);
      //   dd($data);
-        return view("detail",compact("data"));
+        return view("detail",compact("data"))->with("user",Estates::find($id)->user);
     }
 }

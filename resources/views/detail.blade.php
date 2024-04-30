@@ -21,7 +21,7 @@
                       <li class="list-inline-item m-0 3"><i class="fas fa-star small text-warning"></i></li>
                       <li class="list-inline-item m-0 4"><i class="fas fa-star small text-warning"></i></li>
                     </ul>
-                    <h2 class="h4">Red digital smartwatch</h2>
+                    <h2 class="h4">{{ $user->name }}</h2>
                     <p class="text-muted">{{ $data->amunt }}</p>
                     <p class="text-sm mb-4">{{$data->name}}</p>
                     <div class="row align-items-stretch mb-4 gx-0">
@@ -80,7 +80,7 @@
                 <li class="list-inline-item m-0 3"><i class="fas fa-star small text-warning"></i></li>
                 <li class="list-inline-item m-0 4"><i class="fas fa-star small text-warning"></i></li>
               </ul>
-              <h1>Red digital smartwatch</h1>
+              <h1>{{ $user->name }}</h1>
               <p class="text-muted lead">${{ $data->amunt }}</p>
               <p class="text-sm mb-4">{{$data->address}}</p>
               <div class="row align-items-stretch mb-4">
